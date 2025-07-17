@@ -4,6 +4,45 @@
 <head>
     <meta charset="UTF-8">
     <title>쿠폰 코드 링크 생성기</title>
+    <!-- ================================
+         [Google Tag Manager 코드 시작]
+         사이트 방문자 트래픽, 마케팅 태그 관리
+         ================================ -->
+    <script>
+        // Google Tag Manager 삽입 스크립트 (head 영역)
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-W4RB5JWP');
+    </script>
+    <!-- ================================
+         [Google Tag Manager 코드 끝]
+         ================================ -->
+
+    <!-- ================================
+         [Google Analytics 4 코드 시작]
+         방문자/이벤트 데이터 수집
+         ================================ -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XF9H5LNT7T"></script>
+    <script>
+        // GA4(구글 애널리틱스) 기본 설정
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-XF9H5LNT7T');
+    </script>
+    <!-- ================================
+         [Google Analytics 4 코드 끝]
+         ================================ -->
+
     <style>
         body {
             font-family: 'Segoe UI', Arial, sans-serif;
@@ -52,6 +91,17 @@
 </head>
 
 <body>
+    <!-- ================================
+         [Google Tag Manager noscript 버전]
+         JS 비활성화 사용자 트래픽도 수집
+         ================================ -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W4RB5JWP"
+                height="0" width="0"
+                style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- ================================ -->
+
     <button class="donate-btn" onclick="showDonate()">💝 후원하기</button>
     <h2>쿠폰 코드 링크 생성기</h2>
     <label>
