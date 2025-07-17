@@ -95,6 +95,7 @@
             }
         }
     </style>
+    <link rel="stylesheet" href="style.css">
     <meta name="keywords"
         content="세븐나이츠, 대보물시대, 쿠폰, 자동입력, 세나쿠폰, Netmarble, 쿠폰 코드, 자동 쿠폰 등록, 세나, Daebomul, coupon, SevenKnights">
     <meta name="description"
@@ -163,9 +164,43 @@
         </div>
     </nav>
 
+
+
     <!-- Main Content -->
     <main class="flex-shrink-0" style="padding-top:72px">
         <div class="container py-4">
+
+
+            <!-- 광고 배너 캐러셀 -->
+            <div class="small text-muted mb-1 ms-1">[광고] 광고 클릭 시 새 창에서 이동합니다</div>
+            <div id="adCarousel" class="carousel slide mb-3" data-bs-ride="carousel">
+                <div class="carousel-inner rounded shadow-sm">
+
+                    <div class="carousel-item" data-bs-interval="6000">
+                        <a href="https://link.coupang.com/a/cFrc3H" target="_blank" rel="noopener"
+                            onclick="trackAdClick('세나 칠성사이다')">
+                            <img src="ad/사이다.png" class="d-block w-100" alt="세나 칠성사이다">
+                        </a>
+                    </div>
+
+                    <div class="carousel-item active" data-bs-interval="6000">
+                        <a href="https://link.coupang.com/a/cFrddm" target="_blank" rel="noopener"
+                            onclick="trackAdClick('마비노기 피규어')">
+                            <img src="ad/마비노기.png" class="d-block w-100" alt="마비노기 피규어">
+                        </a>
+                    </div>
+
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#adCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                    <span class="visually-hidden">이전</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#adCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                    <span class="visually-hidden">다음</span>
+                </button>
+            </div>
+
 
             <h2 class="mb-4 fw-bold text-primary">대보물시대 쿠폰 코드 링크 생성기</h2>
             <div class="mb-3">
@@ -320,6 +355,17 @@
         };
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function trackAdClick(label) {
+            if (typeof gtag === 'function') {
+                gtag('event', 'ad_click', {
+                    event_category: 'Ad',
+                    event_label: label
+                });
+            }
+        }
+
+    </script>
 </body>
 
 </html>

@@ -1,0 +1,44 @@
+#adCarousel .carousel-inner a {
+  display: block;
+  transition: box-shadow 0.2s;
+}
+#adCarousel .carousel-inner img {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+  background: #ffffff;
+  object-fit: contain;
+  width: 100%;
+  height: 180px;
+}
+#adCarousel .carousel-inner a:hover img,
+#adCarousel .carousel-inner a:focus img {
+  transform: scale(1.06);
+  box-shadow: 0 6px 16px rgba(80, 100, 140, 0.22);
+  filter: brightness(1.06) saturate(1.1);
+}
+#adCarousel .carousel-inner a:active img {
+  transform: scale(0.98);
+  filter: brightness(0.96);
+}
+
+#adCarousel .carousel-inner a::after {
+  content: "↗";
+  color: #e0a800;
+  font-size: 1.2em;
+  position: absolute;
+  top: 13px;
+  right: 18px;
+  background: rgba(255, 255, 255, 0.65);
+  padding: 2px 6px 2px 5px;
+  border-radius: 9px;
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none;
+}
+#adCarousel .carousel-inner a:hover::after {
+  opacity: 1;
+}
+#adCarousel .carousel-inner a {
+  position: relative;
+}
