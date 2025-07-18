@@ -91,50 +91,14 @@
         </div>
     </nav>
 
-    <!-- Main Content -->
-    <main class="flex-shrink-0" style="padding-top:72px">
-        <div class="container py-4">
-            <h2 class="mb-4 fw-bold text-primary">세븐나이츠 쿠폰 코드 자동입력</h2>
-            <p>아래에서 UID 입력 후, 원하는 <b>세븐나이츠 쿠폰</b>을 자동등록 할 수 있습니다.</p>
-            <div class="mb-3">
-                <label for="uid" class="form-label">UID 입력</label>
-                <input type="text" id="uid" class="form-control w-auto d-inline-block" placeholder="UID 입력">
-
-                <script>
-                    // ① 저장된 UID 불러오기
-                    window.addEventListener('DOMContentLoaded', function () {
-                        const saved = localStorage.getItem('coupontool_uid');
-                        if (saved) document.getElementById('uid').value = saved;
-                    });
-
-                    // ② UID 입력시 실시간 저장
-                    document.getElementById('uid').addEventListener('input', function (e) {
-                        localStorage.setItem('coupontool_uid', e.target.value);
-                    });
-
-                    // ...이하 기존 코드
-                </script>
-
-                <button id="openSelectedBtn" class="btn btn-success ms-2">체크된 링크 일괄 열기</button>
-            </div>
-            <div class="table-responsive">
-                <table class="table table-bordered align-middle mb-4">
-                    <thead class="table-light">
-                        <tr>
-                            <th><input type="checkbox" id="selectAll"> 전체</th>
-                            <th>번호</th>
-                            <th>코드</th>
-                            <th>보상/설명</th>
-                            <th>링크 이동</th>
-                        </tr>
-                    </thead>
-                    <tbody id="coupon-tbody">
-                        <!-- 데이터가 JS로 생성됩니다 -->
-                    </tbody>
-                </table>
-            </div>
+    <main class="flex-shrink-0 d-flex align-items-center justify-content-center" style="padding-top:72px; min-height:60vh">
+        <div class="text-center py-5">
+            <div class="display-5 mb-3 fw-bold text-secondary">페이지 준비중</div>
+            <p class="lead mb-4">세븐나이츠 쿠폰 자동입력 서비스는 곧 오픈 예정입니다.<br>빠른 시일 내에 찾아뵙겠습니다!</p>
+            <a href="index.html" class="btn btn-primary mt-2">메인으로 이동</a>
         </div>
     </main>
+
 
     <!-- Footer -->
     <footer class="footer mt-auto py-3 border-top">
