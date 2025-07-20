@@ -101,7 +101,14 @@
     <main class="flex-shrink-0" style="padding-top:72px">
         <div class="container py-4">
 
-            <h2 class="mb-4 fw-bold text-primary">대보물시대 쿠폰 코드 링크 생성기</h2>
+            <div class="d-flex align-items-center justify-content-between mb-4 flex-wrap gap-2">
+                <h2 class="fw-bold text-primary mb-0">대보물시대 쿠폰 코드 링크 생성기</h2>
+                <button id="btnBookmark" class="btn btn-outline-warning btn-sm d-flex align-items-center px-3"
+                    type="button" style="font-weight:bold;">
+                    <i class="bi bi-star me-2" style="font-size:1.2em"></i>
+                    즐겨찾기 추가
+                </button>
+            </div>
 
             <!-- 운영 공지/감사 메시지 -->
             <div class="alert alert-warning my-3 small text-center">
@@ -344,7 +351,33 @@
         }
         window.trackAdClick = trackAdClick;
     </script>
+    <script>
+        document.getElementById('btnBookmark').addEventListener('click', function () {
+            const url = window.location.href;
+            const title = document.title;
 
+            // IE & 일부 Edge 구버전
+            if (window.external && ('AddFavorite' in window.external)) {
+                window.external.AddFavorite(url, title);
+                return;
+            }
+
+            // iOS
+            const ua = navigator.userAgent;
+            if (/iPad|iPhone|iPod/.test(ua)) {
+                alert("iOS에서는 사파리에서\n공유 버튼(위쪽 화살표)을 누른 뒤\n'홈 화면에 추가' 또는 '북마크 추가'를 선택하세요.");
+                return;
+            }
+            // Android Chrome
+            if (/Android/.test(ua)) {
+                alert("Android에서는\n브라우저 우측 상단 메뉴(⋮)에서\n'북마크' 또는 '홈 화면에 추가'를 선택하세요.");
+                return;
+            }
+            // 대부분의 PC 브라우저
+            alert("이 페이지를 즐겨찾기에 추가하려면\n[Ctrl] + [D] 키를 눌러주세요.");
+        });
+
+    </script>
 
 </body>
 
