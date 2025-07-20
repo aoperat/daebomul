@@ -12,13 +12,9 @@
          사이트 방문자 트래픽, 마케팅 태그 관리
          ================================ -->
     <script>
-        // Google Tag Manager 삽입 스크립트 (head 영역)
         (function (w, d, s, l, i) {
             w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start': new Date().getTime(),
-                event: 'gtm.js'
-            });
+            w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
             var f = d.getElementsByTagName(s)[0],
                 j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
             j.async = true;
@@ -59,21 +55,30 @@
     <meta name="description"
         content="세븐나이츠, 대보물시대 등 다양한 게임 쿠폰을 빠르고 편하게 자동입력할 수 있는 쿠폰 링크 생성기! UID 입력만으로 대량 쿠폰 자동 오픈. 개발자 제공, 무료 사용.">
 
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+       
+    </style>
 </head>
 
 <body class="d-flex flex-column min-vh-100">
-    <!-- ================================
-         [Google Tag Manager noscript 버전]
-         JS 비활성화 사용자 트래픽도 수집
-         ================================ -->
+    <!-- Google Tag Manager (noscript) -->
     <noscript>
         <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W4RB5JWP" height="0" width="0"
             style="display:none;visibility:hidden"></iframe>
     </noscript>
-    <!-- ================================ -->
+    <!-- End Google Tag Manager (noscript) -->
 
+    <!-- 모바일용 커피사기 플로팅 버튼 -->
+    <button id="fab-coffee" type="button" data-bs-toggle="modal" data-bs-target="#donateModal">
+        <i class="bi bi-cup-hot"></i> 커피사기
+    </button>
 
-    <!-- Modal -->
+    <!-- 후원 모달 -->
     <div class="modal fade" id="donateModal" tabindex="-1" aria-labelledby="donateModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -103,7 +108,6 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarMain">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <!-- 탭 메뉴 -->
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">대보물시대 쿠폰</a>
                     </li>
@@ -111,60 +115,38 @@
                         <a class="nav-link" href="coupon-seven.html">세븐나이츠 쿠폰</a>
                     </li>
                 </ul>
-                <!-- 버튼 -->
+                <!-- PC용 커피사기 버튼(모바일에서는 숨김) -->
                 <a href="#" class="btn btn-warning fw-bold ms-lg-2" data-bs-toggle="modal"
                     data-bs-target="#donateModal">☕ 개발자에게 커피사기</a>
-
-
-
-
             </div>
         </div>
     </nav>
 
-
-
     <!-- Main Content -->
     <main class="flex-shrink-0" style="padding-top:72px">
         <div class="container py-4">
-
-
             <h2 class="mb-4 fw-bold text-primary">대보물시대 쿠폰 코드 링크 생성기</h2>
-
-
-            <!-- 광고 배너 캐러셀 -->
             <div class="small text-muted mb-1 ms-1">[광고] 광고 클릭 시 새 창에서 이동합니다</div>
-            <span style="color:#b71c1c;font-weight:bold;">※ 광고 클릭 후에만 '체크된 링크 일괄 열기' 버튼이 활성화됩니다.</span>
-
+            <!-- 광고 배너 예시 캐러셀 -->
             <div id="adCarousel" class="carousel slide mb-3" data-bs-ride="carousel">
                 <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#adCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="1"></button>
+                    <button type="button" data-bs-target="#adCarousel" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="1"></button>
                     <button type="button" data-bs-target="#adCarousel" data-bs-slide-to="1" aria-label="2"></button>
-                    <button type="button" data-bs-target="#adCarousel" data-bs-slide-to="2" aria-label="3"></button>
                 </div>
                 <div class="carousel-inner rounded shadow-sm">
-
                     <div class="carousel-item" data-bs-interval="6000">
                         <a href="https://link.coupang.com/a/cFrc3H" target="_blank" rel="noopener"
                             onclick="trackAdClick('세나 칠성사이다', 'https://link.coupang.com/a/cFrc3H')">
                             <img src="ad/사이다.png" class="d-block w-100" alt="세나 칠성사이다">
                         </a>
                     </div>
-
                     <div class="carousel-item active" data-bs-interval="6000">
                         <a href="https://link.coupang.com/a/cFrddm" target="_blank" rel="noopener"
                             onclick="trackAdClick('마비노기 피규어', 'https://link.coupang.com/a/cFrddm')">
                             <img src="ad/마비노기.png" class="d-block w-100" alt="마비노기 피규어">
                         </a>
                     </div>
-
-                    <div class="carousel-item" data-bs-interval="6000">
-                        <a href="https://example.com" target="_blank" rel="noopener"
-                            onclick="trackAdClick('샘플 광고', 'https://example.com')">
-                            <img src="sampleimg.png" class="d-block w-100" alt="샘플 광고">
-                        </a>
-                    </div>
-
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#adCarousel" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon"></span>
@@ -178,39 +160,16 @@
             <div class="alert alert-warning py-2 mb-2">
                 광고를 클릭하셔야 <b>'체크된 링크 일괄 열기'</b> 버튼이 활성화됩니다.
             </div>
-
-
-
             <p style="color: #b71c1c; font-weight: bold;">
                 ※ iOS(Safari 등)에서는 보안 정책상 한 번에 하나의 탭만 열립니다.<br>
                 여러 사이트를 한 번에 열려면 PC 브라우저를 이용해 주세요.
             </p>
-
-
             <div class="mb-3">
                 <label for="uid" class="form-label">UID 입력</label>
                 <input type="text" id="uid" class="form-control w-auto d-inline-block" placeholder="UID 입력">
-
-                <script>
-                    // ① 저장된 UID 불러오기
-                    window.addEventListener('DOMContentLoaded', function () {
-                        const saved = localStorage.getItem('coupontool_uid');
-                        if (saved) document.getElementById('uid').value = saved;
-                    });
-
-                    // ② UID 입력시 실시간 저장
-                    document.getElementById('uid').addEventListener('input', function (e) {
-                        localStorage.setItem('coupontool_uid', e.target.value);
-                    });
-
-                    // ...이하 기존 코드
-                </script>
-
                 <button id="openSelectedBtn" class="btn btn-success ms-2" disabled>
                     체크된 링크 일괄 열기 (광고 클릭 시 활성화)
                 </button>
-
-
             </div>
             <div class="table-responsive">
                 <table class="table table-bordered align-middle mb-4">
@@ -230,7 +189,6 @@
             </div>
         </div>
     </main>
-
     <!-- Footer -->
     <footer class="footer mt-auto py-3 border-top">
         <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
@@ -245,83 +203,123 @@
             <div class="text-muted small">&copy; 2025 디벨로프로. All rights reserved.</div>
         </div>
     </footer>
-
-    <!-- Scripts -->
+    <!-- scripts -->
     <script src="coupons-dae.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-
-        // 테이블 생성
-        const tbody = document.getElementById('coupon-tbody');
-        coupons.forEach((row, i) => {
-            const tr = document.createElement('tr');
-
-            // 체크박스
-            const tdCheck = document.createElement('td');
-            if (row.code) {
-                const cb = document.createElement('input');
-                cb.type = 'checkbox';
-                cb.className = 'cb-coupon';
-                cb.dataset.idx = i;
-                tdCheck.appendChild(cb);
-            }
-            tr.appendChild(tdCheck);
-
-            // 번호
-            const tdNum = document.createElement('td');
-            tdNum.textContent = i + 1;
-            tr.appendChild(tdNum);
-
-            // 코드
-            const tdCode = document.createElement('td');
-            tdCode.textContent = row.code;
-            tr.appendChild(tdCode);
-
-            // 설명
-            const tdDesc = document.createElement('td');
-            tdDesc.textContent = row.desc;
-            tr.appendChild(tdDesc);
-
-            // 버튼
-            const tdBtn = document.createElement('td');
-            if (row.code) {
-                const btn = document.createElement('button');
-                btn.textContent = "이동";
-                btn.className = "btn btn-outline-primary btn-sm";
-                btn.onclick = function () {
-                    const uid = document.getElementById('uid').value.trim();
-                    if (!uid) {
-                        alert('UID를 입력하세요.');
-                        document.getElementById('uid').focus();
-                        return;
-                    }
-                    const url = `https://coupon.netmarble.com/tskgb?playerId=${encodeURIComponent(uid)}&code=${row.code}`;
-                    window.open(url, '_blank');
-                };
-                tdBtn.appendChild(btn);
-            }
-            tr.appendChild(tdBtn);
-
-            tbody.appendChild(tr);
+        // UID 저장/불러오기
+        window.addEventListener('DOMContentLoaded', function () {
+            const saved = localStorage.getItem('coupontool_uid');
+            if (saved) document.getElementById('uid').value = saved;
         });
+        document.getElementById('uid').addEventListener('input', function (e) {
+            localStorage.setItem('coupontool_uid', e.target.value);
+        });
+
+        // 광고 클릭 여부
+        let isAdClicked = false;
+
+        // 쿠폰 테이블 렌더링 함수
+        function renderTable() {
+            const tbody = document.getElementById('coupon-tbody');
+            tbody.innerHTML = '';
+            coupons.forEach((row, i) => {
+                const tr = document.createElement('tr');
+
+                // 체크박스
+                const tdCheck = document.createElement('td');
+                if (row.code) {
+                    const cb = document.createElement('input');
+                    cb.type = 'checkbox';
+                    cb.className = 'cb-coupon';
+                    cb.dataset.idx = i;
+                    if (i >= 10 && !isAdClicked) cb.disabled = true;
+                    tdCheck.appendChild(cb);
+                }
+                tr.appendChild(tdCheck);
+
+                // 번호
+                const tdNum = document.createElement('td');
+                tdNum.textContent = i + 1;
+                tr.appendChild(tdNum);
+
+                // 코드
+                const tdCode = document.createElement('td');
+                tdCode.textContent = row.code;
+                tr.appendChild(tdCode);
+
+                // 설명
+                const tdDesc = document.createElement('td');
+                tdDesc.textContent = row.desc;
+                tr.appendChild(tdDesc);
+
+                // 이동 버튼
+                const tdBtn = document.createElement('td');
+                if (row.code) {
+                    const btn = document.createElement('button');
+                    btn.textContent = "이동";
+                    btn.className = "btn btn-outline-primary btn-sm";
+                    if (i >= 10 && !isAdClicked) {
+                        btn.disabled = true;
+                        btn.classList.add('disabled');
+                        btn.onclick = function () {
+                            alert("10번째 이후 쿠폰은 광고 클릭 후에 활성화됩니다.\n광고를 클릭해주세요.");
+                            document.getElementById('selectAll').checked = false;
+                            document.querySelectorAll('.cb-coupon').forEach(cb => cb.checked = false);
+                        }
+                    } else {
+                        btn.onclick = function () {
+                            const uid = document.getElementById('uid').value.trim();
+                            if (!uid) {
+                                alert('UID를 입력하세요.');
+                                document.getElementById('uid').focus();
+                                return;
+                            }
+                            const url = `https://coupon.netmarble.com/tskgb?playerId=${encodeURIComponent(uid)}&code=${row.code}`;
+                            window.open(url, '_blank');
+                        };
+                    }
+                    tdBtn.appendChild(btn);
+                }
+                tr.appendChild(tdBtn);
+                tbody.appendChild(tr);
+
+                // 안내 tr은 10번째 쿠폰 다음(i === 9)에서 한번만 추가
+                if (i === 9 && !isAdClicked) {
+                    const noticeTr = document.createElement('tr');
+                    const noticeTd = document.createElement('td');
+                    noticeTd.colSpan = 5;
+                    noticeTd.className = "text-center";
+                    noticeTd.style.color = "#b71c1c";
+                    noticeTd.style.fontWeight = "bold";
+                    noticeTd.style.background = "#fffde7";
+                    noticeTd.textContent = "※ 10번째 이후 쿠폰은 광고 클릭 후 활성화됩니다. 광고를 클릭하시면 모든 쿠폰을 사용할 수 있습니다.";
+                    noticeTr.appendChild(noticeTd);
+                    tbody.appendChild(noticeTr);
+                }
+            });
+        }
+
+        renderTable();
 
         // 전체선택 기능
         document.getElementById('selectAll').addEventListener('change', function () {
             const checked = this.checked;
             document.querySelectorAll('.cb-coupon').forEach(cb => {
-                cb.checked = checked;
+                if (!cb.disabled) cb.checked = checked;
             });
         });
 
-        // 개별 체크 해제/선택시 전체선택 상태 동기화
-        tbody.addEventListener('change', function (e) {
+        // 개별 체크시 전체선택 상태 동기화
+        document.getElementById('coupon-tbody').addEventListener('change', function (e) {
             if (e.target.classList.contains('cb-coupon')) {
-                const allCheckboxes = Array.from(document.querySelectorAll('.cb-coupon'));
-                const allChecked = allCheckboxes.every(cb => cb.checked);
+                const allCheckboxes = Array.from(document.querySelectorAll('.cb-coupon')).filter(cb => !cb.disabled);
+                const allChecked = allCheckboxes.length > 0 && allCheckboxes.every(cb => cb.checked);
                 document.getElementById('selectAll').checked = allChecked;
             }
         });
 
-        // 일괄 오픈 버튼 기능
+        // 일괄 오픈 버튼
         document.getElementById('openSelectedBtn').onclick = function () {
             const uid = document.getElementById('uid').value.trim();
             if (!uid) {
@@ -341,9 +339,8 @@
                 window.open(url, '_blank');
             });
         };
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
+
+        // 광고 클릭 시 실행 함수 (a태그 onclick에서 호출)
         function trackAdClick(label, url) {
             if (typeof gtag === 'function') {
                 gtag('event', 'ad_click', {
@@ -352,13 +349,12 @@
                     ad_url: url
                 });
             }
-            // 일괄 오픈 버튼 활성화
+            isAdClicked = true;
             document.getElementById('openSelectedBtn').disabled = false;
             document.getElementById('openSelectedBtn').textContent = '체크된 링크 일괄 열기';
-
+            renderTable(); // 비활성화 해제
         }
-
-
+        window.trackAdClick = trackAdClick;
     </script>
 </body>
 
