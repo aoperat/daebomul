@@ -113,58 +113,10 @@
             <!-- 광고 카드(쿠폰 테이블 위 or 아래에 배치) -->
             <div class="container my-3">
                 <div class="row g-3 justify-content-center">
-                    <!-- 세나 칠성사이다 광고카드 -->
-                    <div class="col-12 col-md-6">
-                        <div class="card shadow-sm border-primary h-100">
-                            <div class="row g-0 align-items-center flex-md-row flex-column">
-                                <div class="col-4 d-flex justify-content-center align-items-center">
-                                    <a href="https://link.coupang.com/a/cFrc3H" target="_blank" rel="noopener"
-                                        onclick="trackAdClick('세나 칠성사이다', 'https://link.coupang.com/a/cFrc3H')">
-                                        <img src="ad/사이다.png" alt="세나 칠성사이다" class="img-fluid rounded-start p-1"
-                                            style="max-height:72px;">
-                                    </a>
-                                </div>
-                                <div class="col-8">
-                                    <div class="card-body p-2">
-                                        <h6 class="card-title mb-1" style="font-weight:600;">세나 칠성사이다</h6>
-                                        <p class="card-text mb-2" style="font-size:0.95em;">게임 덕후의 필수 아이템! <br>시원하게
-                                            즐기세요<br><span style="color:#888;">[광고]</span></p>
-                                        <a href="https://link.coupang.com/a/cFrc3H" target="_blank" rel="noopener"
-                                            class="btn btn-outline-primary btn-sm"
-                                            onclick="trackAdClick('세나 칠성사이다', 'https://link.coupang.com/a/cFrc3H')">
-                                            쿠팡에서 보기
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- 마비노기 광고카드 -->
-                    <div class="col-12 col-md-6">
-                        <div class="card shadow-sm border-primary h-100">
-                            <div class="row g-0 align-items-center flex-md-row flex-column">
-                                <div class="col-4 d-flex justify-content-center align-items-center">
-                                    <a href="https://link.coupang.com/a/cFrddm" target="_blank" rel="noopener"
-                                        onclick="trackAdClick('마비노기 피규어', 'https://link.coupang.com/a/cFrddm')">
-                                        <img src="ad/마비노기.png" alt="마비노기 피규어" class="img-fluid rounded-start p-1"
-                                            style="max-height:72px;">
-                                    </a>
-                                </div>
-                                <div class="col-8">
-                                    <div class="card-body p-2">
-                                        <h6 class="card-title mb-1" style="font-weight:600;">인기 굿즈 추천!</h6>
-                                        <p class="card-text mb-2" style="font-size:0.95em;">많은 유저가 찾는 마비노기 피규어<br><span
-                                                style="color:#888;">[광고]</span></p>
-                                        <a href="https://link.coupang.com/a/cFrddm" target="_blank" rel="noopener"
-                                            class="btn btn-outline-primary btn-sm"
-                                            onclick="trackAdClick('마비노기 피규어', 'https://link.coupang.com/a/cFrddm')">
-                                            쿠팡에서 보기
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <iframe
+                        src="https://ads-partners.coupang.com/widgets.html?id=891678&template=carousel&trackingCode=AF5721025&subId=&width=600&height=400&tsource="
+                        width="600" height="400" frameborder="0" scrolling="no" referrerpolicy="unsafe-url"
+                        browsingtopics></iframe>
                 </div>
             </div>
 
@@ -268,7 +220,8 @@
             const lastPopupTime = localStorage.getItem('adPopupLastTime');
 
             // 6시간이 안 지났으면 함수 종료(팝업 오픈 안 함)
-            if (lastPopupTime && now - Number(lastPopupTime) < POPUP_INTERVAL) {
+            var test = false;
+            if ((lastPopupTime && now - Number(lastPopupTime) < POPUP_INTERVAL) && test) {
                 return;
             }
 
