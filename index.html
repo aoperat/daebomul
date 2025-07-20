@@ -97,42 +97,6 @@
         </div>
     </nav>
 
-    <!-- Bootstrap 모달 팝업 예시 -->
-    <div class="modal fade" id="adSupportModal" tabindex="-1" aria-labelledby="adSupportLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="adSupportLabel">무료 서비스 안내</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="닫기"></button>
-                </div>
-                <div class="modal-body text-center">
-                    <p>
-                        본 서비스는 광고 수익으로 운영됩니다.<br>
-                        <b>아래 추천 상품</b>을 한 번씩 둘러봐 주시면<br>
-                        서비스 운영에 큰 도움이 됩니다.<br>
-                        <span class="text-muted small">* 광고 클릭은 강제되지 않습니다.</span>
-                    </p>
-                    <!-- 광고 배너/링크 -->
-                    <a href="https://link.coupang.com/a/cFrddm" target="_blank" rel="noopener"
-                        onclick="trackAdClick('마비노기 피규어', 'https://link.coupang.com/a/cFrddm')">
-                        <img src="ad/마비노기.png" alt="마비노기 피규어" style="max-width:160px;" class="mb-2 rounded shadow">
-                    </a>
-                    <div>
-                        <a href="https://link.coupang.com/a/cFrddm" target="_blank" rel="noopener"
-                            onclick="trackAdClick('마비노기 피규어', 'https://link.coupang.com/a/cFrddm')"
-                            class="btn btn-outline-primary btn-sm">
-                            쿠팡에서 자세히 보기
-                        </a>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
     <!-- Main Content -->
     <main class="flex-shrink-0" style="padding-top:72px">
         <div class="container py-4">
@@ -286,19 +250,35 @@
     <!-- scripts -->
     <script src="coupons-dae.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ads-partners.coupang.com/g.js"></script>
     <script>
         // UID 저장/불러오기
         window.addEventListener('DOMContentLoaded', function () {
             const saved = localStorage.getItem('coupontool_uid');
             if (saved) document.getElementById('uid').value = saved;
 
-            if (!localStorage.getItem('ad_popup_shown')) {
-                var modal = new bootstrap.Modal(document.getElementById('adSupportModal'));
-                modal.show();
-                localStorage.setItem('ad_popup_shown', 'yes');
-            }
+            openAdPopup()
 
         });
+
+        // 버튼 클릭 등으로 실행
+        function openAdPopup() {
+            const POPUP_INTERVAL = 6 * 60 * 60 * 1000; // 6시간(ms)
+            const now = Date.now();
+            const lastPopupTime = localStorage.getItem('adPopupLastTime');
+
+            // 6시간이 안 지났으면 함수 종료(팝업 오픈 안 함)
+            if (lastPopupTime && now - Number(lastPopupTime) < POPUP_INTERVAL) {
+                return;
+            }
+
+            // 6시간 지났으면 팝업 오픈
+            window.open('ad-popup.html', 'adPopup', 'width=650,height=600,resizable=yes,scrollbars=yes');
+            localStorage.setItem('adPopupLastTime', now.toString());
+        }
+
+
+
         document.getElementById('uid').addEventListener('input', function (e) {
             localStorage.setItem('coupontool_uid', e.target.value);
         });
@@ -412,6 +392,8 @@
         }
         window.trackAdClick = trackAdClick;
     </script>
+
+
 </body>
 
 </html>
