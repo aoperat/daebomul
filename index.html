@@ -56,45 +56,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- 부트스트랩 5 CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-        }
-
-        .navbar {
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
-        }
-
-        .nav-tabs .nav-link.active {
-            background: #fff8e1;
-            color: #bc7700;
-            border-color: #ffe082 #ffe082 #fff;
-        }
-
-        .footer {
-            background: #f7f7fa;
-        }
-
-        .footer .btn {
-            font-size: 0.95rem;
-            padding: 0.25rem 0.7rem;
-        }
-
-        /* 반응형 테이블 가독성 */
-        @media (max-width: 600px) {
-
-            th,
-            td {
-                font-size: 13px;
-                padding: 4px;
-            }
-
-            .footer .btn {
-                font-size: 13px;
-                padding: 2px 7px;
-            }
-        }
-    </style>
     <link rel="stylesheet" href="style.css">
     <meta name="keywords"
         content="세븐나이츠, 대보물시대, 쿠폰, 자동입력, 세나쿠폰, Netmarble, 쿠폰 코드, 자동 쿠폰 등록, 세나, Daebomul, coupon, SevenKnights">
@@ -174,19 +135,31 @@
             <!-- 광고 배너 캐러셀 -->
             <div class="small text-muted mb-1 ms-1">[광고] 광고 클릭 시 새 창에서 이동합니다</div>
             <div id="adCarousel" class="carousel slide mb-3" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#adCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="1"></button>
+                    <button type="button" data-bs-target="#adCarousel" data-bs-slide-to="1" aria-label="2"></button>
+                    <button type="button" data-bs-target="#adCarousel" data-bs-slide-to="2" aria-label="3"></button>
+                </div>
                 <div class="carousel-inner rounded shadow-sm">
 
                     <div class="carousel-item" data-bs-interval="6000">
                         <a href="https://link.coupang.com/a/cFrc3H" target="_blank" rel="noopener"
-                            onclick="trackAdClick('세나 칠성사이다')">
+                            onclick="trackAdClick('세나 칠성사이다', 'https://link.coupang.com/a/cFrc3H')">
                             <img src="ad/사이다.png" class="d-block w-100" alt="세나 칠성사이다">
                         </a>
                     </div>
 
                     <div class="carousel-item active" data-bs-interval="6000">
                         <a href="https://link.coupang.com/a/cFrddm" target="_blank" rel="noopener"
-                            onclick="trackAdClick('마비노기 피규어')">
+                            onclick="trackAdClick('마비노기 피규어', 'https://link.coupang.com/a/cFrddm')">
                             <img src="ad/마비노기.png" class="d-block w-100" alt="마비노기 피규어">
+                        </a>
+                    </div>
+
+                    <div class="carousel-item" data-bs-interval="6000">
+                        <a href="https://example.com" target="_blank" rel="noopener"
+                            onclick="trackAdClick('샘플 광고', 'https://example.com')">
+                            <img src="sampleimg.png" class="d-block w-100" alt="샘플 광고">
                         </a>
                     </div>
 
@@ -200,6 +173,7 @@
                     <span class="visually-hidden">다음</span>
                 </button>
             </div>
+            <p class="text-center text-secondary small mb-3">후원해주시면 서비스 운영에 큰 도움이 됩니다</p>
 
 
             <h2 class="mb-4 fw-bold text-primary">대보물시대 쿠폰 코드 링크 생성기</h2>
@@ -363,11 +337,12 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        function trackAdClick(label) {
+        function trackAdClick(label, url) {
             if (typeof gtag === 'function') {
                 gtag('event', 'ad_click', {
                     event_category: 'Ad',
-                    event_label: label
+                    event_label: label,
+                    ad_url: url
                 });
             }
         }
