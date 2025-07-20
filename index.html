@@ -220,8 +220,7 @@
             const lastPopupTime = localStorage.getItem('adPopupLastTime');
 
             // 6시간이 안 지났으면 함수 종료(팝업 오픈 안 함)
-            var test = false;
-            if ((lastPopupTime && now - Number(lastPopupTime) < POPUP_INTERVAL) && test) {
+            if ((lastPopupTime && now - Number(lastPopupTime) < POPUP_INTERVAL)) {
                 return;
             }
 
