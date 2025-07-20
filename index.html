@@ -71,6 +71,8 @@
         </div>
     </div>
 
+
+
     <!-- Header & Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container-fluid">
@@ -95,13 +97,120 @@
         </div>
     </nav>
 
+    <!-- Bootstrap 모달 팝업 예시 -->
+    <div class="modal fade" id="adSupportModal" tabindex="-1" aria-labelledby="adSupportLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="adSupportLabel">무료 서비스 안내</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="닫기"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <p>
+                        본 서비스는 광고 수익으로 운영됩니다.<br>
+                        <b>아래 추천 상품</b>을 한 번씩 둘러봐 주시면<br>
+                        서비스 운영에 큰 도움이 됩니다.<br>
+                        <span class="text-muted small">* 광고 클릭은 강제되지 않습니다.</span>
+                    </p>
+                    <!-- 광고 배너/링크 -->
+                    <a href="https://link.coupang.com/a/cFrddm" target="_blank" rel="noopener"
+                        onclick="trackAdClick('마비노기 피규어', 'https://link.coupang.com/a/cFrddm')">
+                        <img src="ad/마비노기.png" alt="마비노기 피규어" style="max-width:160px;" class="mb-2 rounded shadow">
+                    </a>
+                    <div>
+                        <a href="https://link.coupang.com/a/cFrddm" target="_blank" rel="noopener"
+                            onclick="trackAdClick('마비노기 피규어', 'https://link.coupang.com/a/cFrddm')"
+                            class="btn btn-outline-primary btn-sm">
+                            쿠팡에서 자세히 보기
+                        </a>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <!-- Main Content -->
     <main class="flex-shrink-0" style="padding-top:72px">
         <div class="container py-4">
+
             <h2 class="mb-4 fw-bold text-primary">대보물시대 쿠폰 코드 링크 생성기</h2>
-            <div class="small text-muted mb-1 ms-1">[광고] 아래의 추천 상품은 운영 비용에 도움이 됩니다.</div>
+
+            <!-- 운영 공지/감사 메시지 -->
+            <div class="alert alert-warning my-3 small text-center">
+                본 사이트는 쿠팡파트너스 광고 수익으로 운영됩니다.<br>
+                광고에 관심을 가져주시면 더 나은 무료 서비스를 제공하는 데 큰 힘이 됩니다. 감사합니다!
+            </div>
+
+
+            <!-- 광고 카드(쿠폰 테이블 위 or 아래에 배치) -->
+            <div class="container my-3">
+                <div class="row g-3 justify-content-center">
+                    <!-- 세나 칠성사이다 광고카드 -->
+                    <div class="col-12 col-md-6">
+                        <div class="card shadow-sm border-primary h-100">
+                            <div class="row g-0 align-items-center flex-md-row flex-column">
+                                <div class="col-4 d-flex justify-content-center align-items-center">
+                                    <a href="https://link.coupang.com/a/cFrc3H" target="_blank" rel="noopener"
+                                        onclick="trackAdClick('세나 칠성사이다', 'https://link.coupang.com/a/cFrc3H')">
+                                        <img src="ad/사이다.png" alt="세나 칠성사이다" class="img-fluid rounded-start p-1"
+                                            style="max-height:72px;">
+                                    </a>
+                                </div>
+                                <div class="col-8">
+                                    <div class="card-body p-2">
+                                        <h6 class="card-title mb-1" style="font-weight:600;">세나 칠성사이다</h6>
+                                        <p class="card-text mb-2" style="font-size:0.95em;">게임 덕후의 필수 아이템! <br>시원하게
+                                            즐기세요<br><span style="color:#888;">[광고]</span></p>
+                                        <a href="https://link.coupang.com/a/cFrc3H" target="_blank" rel="noopener"
+                                            class="btn btn-outline-primary btn-sm"
+                                            onclick="trackAdClick('세나 칠성사이다', 'https://link.coupang.com/a/cFrc3H')">
+                                            쿠팡에서 보기
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 마비노기 광고카드 -->
+                    <div class="col-12 col-md-6">
+                        <div class="card shadow-sm border-primary h-100">
+                            <div class="row g-0 align-items-center flex-md-row flex-column">
+                                <div class="col-4 d-flex justify-content-center align-items-center">
+                                    <a href="https://link.coupang.com/a/cFrddm" target="_blank" rel="noopener"
+                                        onclick="trackAdClick('마비노기 피규어', 'https://link.coupang.com/a/cFrddm')">
+                                        <img src="ad/마비노기.png" alt="마비노기 피규어" class="img-fluid rounded-start p-1"
+                                            style="max-height:72px;">
+                                    </a>
+                                </div>
+                                <div class="col-8">
+                                    <div class="card-body p-2">
+                                        <h6 class="card-title mb-1" style="font-weight:600;">인기 굿즈 추천!</h6>
+                                        <p class="card-text mb-2" style="font-size:0.95em;">많은 유저가 찾는 마비노기 피규어<br><span
+                                                style="color:#888;">[광고]</span></p>
+                                        <a href="https://link.coupang.com/a/cFrddm" target="_blank" rel="noopener"
+                                            class="btn btn-outline-primary btn-sm"
+                                            onclick="trackAdClick('마비노기 피규어', 'https://link.coupang.com/a/cFrddm')">
+                                            쿠팡에서 보기
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
             <!-- 광고 배너 캐러셀 (광고 클릭이 어떤 기능의 조건이 아님) -->
-            <div id="adCarousel" class="carousel slide mb-3" data-bs-ride="carousel">
+            <!-- <div class="small text-muted mb-1 ms-1">[광고] 아래의 추천 상품은 운영 비용에 도움이 됩니다.</div> -->
+            <!-- <div id="adCarousel" class="carousel slide mb-3" data-bs-ride="carousel">
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#adCarousel" data-bs-slide-to="0" class="active"
                         aria-current="true" aria-label="1"></button>
@@ -129,7 +238,7 @@
                     <span class="carousel-control-next-icon"></span>
                     <span class="visually-hidden">다음</span>
                 </button>
-            </div>
+            </div> -->
 
             <p style="color: #b71c1c; font-weight: bold;">
                 ※ iOS(Safari 등)에서는 보안 정책상 한 번에 하나의 탭만 열립니다.<br>
@@ -182,6 +291,13 @@
         window.addEventListener('DOMContentLoaded', function () {
             const saved = localStorage.getItem('coupontool_uid');
             if (saved) document.getElementById('uid').value = saved;
+
+            if (!localStorage.getItem('ad_popup_shown')) {
+                var modal = new bootstrap.Modal(document.getElementById('adSupportModal'));
+                modal.show();
+                localStorage.setItem('ad_popup_shown', 'yes');
+            }
+
         });
         document.getElementById('uid').addEventListener('input', function (e) {
             localStorage.setItem('coupontool_uid', e.target.value);
