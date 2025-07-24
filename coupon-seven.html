@@ -4,48 +4,41 @@
 <head>
     <meta charset="UTF-8">
     <title>세븐나이츠 쿠폰 코드 자동입력 | 세나쿠폰</title>
-    <!-- 메타, GA4, GTM 등 기존과 동일 (생략) -->
+    <!-- Google Tag Manager -->
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-W4RB5JWP');
+    </script>
+    <!-- Google Tag Manager End -->
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XF9H5LNT7T"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-XF9H5LNT7T');
+    </script>
+    <!-- Google Analytics 4 End -->
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="세븐나이츠, 대보물시대, 쿠폰, 자동입력, 세나쿠폰, Netmarble, 쿠폰 코드, 자동 쿠폰 등록, 세나, coupon, SevenKnights">
     <meta name="description" content="세븐나이츠 등 다양한 게임 쿠폰을 편하게 자동입력! UID만 입력하면 대량 쿠폰 자동 등록.">
 
-    <!-- 부트스트랩 5 -->
+    <!-- 부트스트랩 5, 공통 스타일 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-        }
-
-        .navbar {
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
-        }
-
-        .footer {
-            background: #f7f7fa;
-        }
-
-        .footer .btn {
-            font-size: 0.95rem;
-            padding: 0.25rem 0.7rem;
-        }
-
-        @media (max-width: 600px) {
-
-            th,
-            td {
-                font-size: 13px;
-                padding: 4px;
-            }
-
-            .footer .btn {
-                font-size: 13px;
-                padding: 2px 7px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="d-flex flex-column min-vh-100">
+
     <!-- Modal: 개발자에게 커피사기 -->
     <div class="modal fade" id="donateModal" tabindex="-1" aria-labelledby="donateModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
@@ -91,14 +84,71 @@
         </div>
     </nav>
 
-    <main class="flex-shrink-0 d-flex align-items-center justify-content-center" style="padding-top:72px; min-height:60vh">
-        <div class="text-center py-5">
-            <div class="display-5 mb-3 fw-bold text-secondary">페이지 준비중</div>
-            <p class="lead mb-4">세븐나이츠 쿠폰 자동입력 서비스는 곧 오픈 예정입니다.<br>빠른 시일 내에 찾아뵙겠습니다!</p>
-            <a href="index.html" class="btn btn-primary mt-2">메인으로 이동</a>
+    <!-- Main Content -->
+    <main class="flex-shrink-0" style="padding-top:72px">
+        <div class="container py-4">
+
+            <!-- 제목 + 즐겨찾기 버튼 -->
+            <div class="d-flex align-items-center justify-content-between mb-4 flex-wrap gap-2">
+                <h2 class="fw-bold text-primary mb-0">세븐나이츠 쿠폰 코드 자동입력</h2>
+                <button id="btnBookmark" class="btn btn-outline-warning btn-sm d-flex align-items-center px-3"
+                    type="button" style="font-weight:bold;">
+                    <i class="bi bi-star me-2" style="font-size:1.2em"></i>
+                    즐겨찾기 추가
+                </button>
+            </div>
+
+            <!-- ⭐ 안내문구 영역 (여기!) -->
+            <div class="alert alert-info py-2 mb-3" style="font-size:1.04em; font-weight:500;">
+                <i class="bi bi-info-circle me-1"></i>
+                <span>
+                    <strong>페이지 정보와 쿠폰 데이터가 예고 없이 변경될 수 있습니다.</strong>
+                    자주 방문하실 분은 <span class="text-warning fw-bold">즐겨찾기</span>를 꼭 해주세요!
+                </span>
+            </div>
+
+            <!-- 운영 공지/감사 메시지 -->
+            <div class="alert alert-warning my-3 small text-center">
+                본 사이트는 쿠팡파트너스 광고 수익으로 운영됩니다.<br>
+                광고에 관심을 가져주시면 더 나은 무료 서비스를 제공하는 데 큰 힘이 됩니다. 감사합니다!
+            </div>
+
+            <!-- 광고 위젯(iframe, 코드1과 동일) -->
+            <div class="container my-3">
+                <div class="row g-3 justify-content-center">
+                    <iframe
+                        src="https://ads-partners.coupang.com/widgets.html?id=891678&template=carousel&trackingCode=AF5721025&subId=&width=600&height=400&tsource="
+                        width="600" height="400" frameborder="0" scrolling="no" referrerpolicy="unsafe-url"
+                        browsingtopics></iframe>
+                </div>
+            </div>
+
+            <!-- 쿠폰 테이블 (코드1과 동일 구조, 데이터/만료 기능만 다름) -->
+            <div class="mb-3">
+                <label for="uid" class="form-label">UID 입력</label>
+                <input type="text" id="uid" class="form-control w-auto d-inline-block" placeholder="UID 입력">
+                <button id="openSelectedBtn" class="btn btn-success ms-2">
+                    체크된 링크 일괄 열기
+                </button>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-bordered align-middle mb-4">
+                    <thead class="table-light">
+                        <tr>
+                            <th><input type="checkbox" id="selectAll"> 전체</th>
+                            <th>번호</th>
+                            <th>코드</th>
+                            <th>보상/설명</th>
+                            <th>링크 이동</th>
+                        </tr>
+                    </thead>
+                    <tbody id="coupon-tbody">
+                        <!-- 데이터가 JS로 생성됩니다 -->
+                    </tbody>
+                </table>
+            </div>
         </div>
     </main>
-
 
     <!-- Footer -->
     <footer class="footer mt-auto py-3 border-top">
@@ -117,14 +167,38 @@
 
     <!-- Scripts -->
     <script src="coupons-seven.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // 테이블 생성
+        // UID 저장/불러오기
+        window.addEventListener('DOMContentLoaded', function () {
+            const saved = localStorage.getItem('coupontool_uid');
+            if (saved) document.getElementById('uid').value = saved;
+
+            openAdPopup();
+        });
+
+        function openAdPopup() {
+            const POPUP_INTERVAL = 6 * 60 * 60 * 1000; // 6시간(ms)
+            const now = Date.now();
+            const lastPopupTime = localStorage.getItem('adPopupLastTime2');
+            if ((lastPopupTime && now - Number(lastPopupTime) < POPUP_INTERVAL)) {
+                return;
+            }
+            window.open('ad-popup.html', 'adPopup', 'width=650,height=600,resizable=yes,scrollbars=yes');
+            localStorage.setItem('adPopupLastTime2', now.toString());
+        }
+
+        document.getElementById('uid').addEventListener('input', function (e) {
+            localStorage.setItem('coupontool_uid', e.target.value);
+        });
+
+        // 테이블 생성(만료/출력 데이터만 다름, 나머지는 코드1과 동일)
         const tbody = document.getElementById('coupon-tbody');
         coupons.forEach((row, i) => {
             const tr = document.createElement('tr');
-            if (row.expired) tr.classList.add('table-secondary'); // 회색 배경
+            if (row.expired) tr.classList.add('table-secondary');
             const tdCheck = document.createElement('td');
-            if (row.code) {
+            if (row.code && !row.expired) {
                 const cb = document.createElement('input');
                 cb.type = 'checkbox';
                 cb.className = 'cb-coupon';
@@ -141,10 +215,8 @@
             const tdDesc = document.createElement('td');
             tdDesc.textContent = row.desc;
             tr.appendChild(tdDesc);
-
             const tdBtn = document.createElement('td');
             if (row.code && !row.expired) {
-                // 버튼 활성화
                 const btn = document.createElement('button');
                 btn.textContent = "이동";
                 btn.className = "btn btn-outline-primary btn-sm";
@@ -155,7 +227,6 @@
                         document.getElementById('uid').focus();
                         return;
                     }
-                    // 세븐나이츠용 URL로 바꿔서 사용하세요
                     const url = `https://coupon.netmarble.com/tskgb?playerId=${encodeURIComponent(uid)}&code=${row.code}`;
                     window.open(url, '_blank');
                 };
@@ -163,7 +234,6 @@
             } else if (row.expired) {
                 tdBtn.textContent = "만료됨";
             }
-
             tr.appendChild(tdBtn);
             tbody.appendChild(tr);
         });
@@ -180,7 +250,7 @@
         tbody.addEventListener('change', function (e) {
             if (e.target.classList.contains('cb-coupon')) {
                 const allCheckboxes = Array.from(document.querySelectorAll('.cb-coupon'));
-                const allChecked = allCheckboxes.every(cb => cb.checked);
+                const allChecked = allCheckboxes.length > 0 && allCheckboxes.every(cb => cb.checked);
                 document.getElementById('selectAll').checked = allChecked;
             }
         });
@@ -201,15 +271,39 @@
             checked.forEach(cb => {
                 const idx = Number(cb.dataset.idx);
                 const code = coupons[idx].code;
-                // 세븐나이츠용 URL로 바꿔서 사용하세요                
                 const url = `https://coupon.netmarble.com/tskgb?playerId=${encodeURIComponent(uid)}&code=${code}`;
                 window.open(url, '_blank');
             });
         };
+    </script>
+    <script>
+        // 즐겨찾기 추가 기능
+        document.getElementById('btnBookmark').addEventListener('click', function () {
+            const url = window.location.href;
+            const title = document.title;
 
+            // IE & 일부 Edge 구버전
+            if (window.external && ('AddFavorite' in window.external)) {
+                window.external.AddFavorite(url, title);
+                return;
+            }
+
+            // iOS
+            const ua = navigator.userAgent;
+            if (/iPad|iPhone|iPod/.test(ua)) {
+                alert("iOS에서는 사파리에서\n공유 버튼(위쪽 화살표)을 누른 뒤\n'홈 화면에 추가' 또는 '북마크 추가'를 선택하세요.");
+                return;
+            }
+            // Android Chrome
+            if (/Android/.test(ua)) {
+                alert("Android에서는\n브라우저 우측 상단 메뉴(⋮)에서\n'북마크' 또는 '홈 화면에 추가'를 선택하세요.");
+                return;
+            }
+            // 대부분의 PC 브라우저
+            alert("이 페이지를 즐겨찾기에 추가하려면\n[Ctrl] + [D] 키를 눌러주세요.");
+        });
 
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
