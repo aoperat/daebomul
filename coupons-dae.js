@@ -21,7 +21,7 @@ const coupons = [
   { code: "WELCOMEBACK", desc: "열쇠 상자 5개" },
   { code: "GACHAGETCHA", desc: "" },
   { code: "BLINGBLING", desc: "열쇠 상자 3개, 골드 10만" },
-  { code: "", desc: "" },
+  { code: "RAREHERO", desc: "" },
   { code: "LODING", desc: "열쇠 상자 3개, 골드 10만" },
   { code: "GUILDWAR", desc: "이벤트 펫 [희귀] 미믹" },
   { code: "HEROSOMMON", desc: "열쇠 240개, 골드 15만" },
